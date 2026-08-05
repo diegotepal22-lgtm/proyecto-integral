@@ -1,0 +1,12 @@
+{
+  "name": "cafeteria-app",
+  "version": "1.0.0",
+  "description": "Aplicación web de registro de ventas para Proyecto Integrador",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
