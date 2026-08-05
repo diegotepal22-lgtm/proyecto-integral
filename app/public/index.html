@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería - Registro de Ventas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border border-slate-200">
+        <div class="text-center mb-6">
+            <span class="text-4xl">☕</span>
+            <h1 class="text-2xl font-bold text-slate-800 mt-2">Cafetería Express</h1>
+            <p class="text-xs text-slate-500">Módulo de Registro de Ventas en Tiempo Real</p>
+        </div>
+        
+        <form action="/registrar" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Producto</label>
+                <input type="text" name="producto" placeholder="Ej. Capuchino Vainilla" required 
+                       class="w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm border focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Categoría</label>
+                <select name="categoria" required class="w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm border focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                    <option value="Bebidas Calientes">Bebidas Calientes</option>
+                    <option value="Bebidas Frías">Bebidas Frías</option>
+                    <option value="Repostería">Repostería</option>
+                    <option value="Comida">Comida</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Cantidad</label>
+                    <input type="number" name="cantidad" value="1" min="1" required 
+                           class="w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm border">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Monto ($)</label>
+                    <input type="number" step="0.01" name="monto" placeholder="4.50" required 
+                           class="w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm border">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Método de Pago</label>
+                <select name="metodo" required class="w-full rounded-lg border-slate-300 bg-slate-50 p-2.5 text-sm border">
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                </select>
+            </div>
+
+            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-lg shadow-md transition duration-200">
+                Guardar Transacción
+            </button>
+        </form>
+    </div>
+</body>
+</html>
